@@ -4,55 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zadacha8
+namespace ScaleFocus
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //zadacha8
-            int n =int.Parse(Console.ReadLine());
-            int[] A = new int[n];
-            int[] B = new int[n];
-            int[] C = new int[n];
-            int[] D = new int[n];
-            Console.WriteLine("The elements in A: ");
+            //Zadacha9;
+            Console.WriteLine("Please ,enter a number !");
+            int n = int.Parse(Console.ReadLine());
+            int[] array = new int[n];
+            int max = int.MinValue;
             for (int i = 0; i < n; i++)
             {
-                A[i] = int.Parse(Console.ReadLine());
-            }
-            Console.WriteLine("The elements in B: ");
-            for (int i = 0; i < n; i++)
-            {
-                B[i] = int.Parse(Console.ReadLine());
-            }
-            Console.WriteLine("The elements in C: ");
-            for (int i = 0; i < n; i++)
-            {
-                C[i] = int.Parse(Console.ReadLine());
-            }
-            Console.WriteLine("The elements in D: ");
-            for (int i = 0; i < n; i++)
-            {
-                D[i] = int.Parse(Console.ReadLine());
+                array[i] = int.Parse(Console.ReadLine());
             }
 
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < n; j++)
+                if (array[i] > max)
                 {
-                    for (int k = 0; k < n; k++)
-                    {
-                        for (int l = 0; l < n; l++)
-                        {
-                            if(((A[i] == B[j]) && (C[k] == D[l])))
-                            {
-                                Console.WriteLine(" " + A[i] + " " + B[j] + " " + C[k] + " " + D[l]);
-                            }
-                        }
-                    }
+                    max = array[i];
+
                 }
             }
+            Console.WriteLine("The max value is : " + max);
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] == max)
+                {
+                    Console.Write("The indexes with max value are : " + i + " , ");
+                }
+            }
+
         }
     }
 }
